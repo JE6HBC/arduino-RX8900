@@ -27,6 +27,11 @@ Based on source code by Akizuki Denshi Tsusho
  USE SERIAL MONITOR,Å@SET 'CR' & 9600bps
  USE TERMINAL SOFT, SET "LOCAL ECHO"
  */
+
+#ifndef _arduino-RX8900_h_ 
+#define _arduino-RX8900_h_ 
+
+#include "Arduino.h"
 #include <Wire.h>
 
 //#define TERMINAL            //UNCOMENT IF USE TERMINAL SOFT
@@ -58,42 +63,40 @@ Based on source code by Akizuki Denshi Tsusho
 #define FRI 0x20
 #define SAT 0x40
 
-unsigned char SEC     = 0x00;//0x00-0x59
-unsigned char MIN     = 0x00;//0x00-0x59
-unsigned char HOUR    = 0x00;//0x00-0x23
-unsigned char WEEK    = 0x01;//SUN=0x01,MON=0x02,TUE=0x04,WED=0x08,THU=0x10,FRI=0x20,SAT=0x40
-unsigned char DAY     = 0x01;//0x00-0x28Å`0x31)
-unsigned char MONTH   = 0x01;//JUN=0x01,FEB=0x02,MAR=0x03,APR=0x04,MAY=0x05,JUN=0x06,JLY=0x07,AUG=0x08,SEP=0x09,OCT=0x10,NOV=0x11,DEC=0x12
-unsigned char YEAR    = 0x00;//0x00-0x99
-unsigned char RAM;
-unsigned char MIN_Alarm;
-unsigned char HOUR_Alarm;
-unsigned char WEEK_DAY_Alarm;
-unsigned char Timer_Counter_0;
-unsigned char Timer_Counter_1;
-unsigned char Extension_Register;
-unsigned char Flag_Register;
-unsigned char Control_Register;
-unsigned char TEMP;
-float         TEMP_RESULT;
-unsigned char Backup_Function;
-unsigned char DUMMY;
-unsigned char OLD_SEC = 0;
-unsigned char OLD_Timer_Counter_0 = 0;
-String MONTH_S = "Jan.Feb.Mar.Apr.May.Jun.Jly.Aug.Sep.dmy.dmy.dmy.dmy.dmy.dmy.Oct.Nov.Dec.";
-String WEEK_S  = "Sun.Mon.Tue.Wed.Thu.Fri.Sat.";
-unsigned char RX_DATA;
-unsigned long RX_RESULT;
-unsigned char RX_FLAG;
-unsigned char DATA_OK_FLAG;
-unsigned char BAD_DATA_FLAG;
-unsigned char ALARM_BUFFER;
-unsigned char str_data[8];
-unsigned long WEEK_ALARM_BUFFER;
-unsigned int TIMER_VALUE;
-
-enum SYORI_FLAG
-{
+extern unsigned char SEC;     //= 0x00;//0x00-0x59
+extern unsigned char MIN;     //= 0x00;//0x00-0x59
+extern unsigned char HOUR;    //= 0x00;//0x00-0x23
+extern unsigned char WEEK;    //= 0x01;//SUN=0x01,MON=0x02,TUE=0x04,WED=0x08,THU=0x10,FRI=0x20,SAT=0x40
+extern unsigned char DAY;     //= 0x01;//0x00-0x28Å`0x31)
+extern unsigned char MONTH;   //= 0x01;//JUN=0x01,FEB=0x02,MAR=0x03,APR=0x04,MAY=0x05,JUN=0x06,JLY=0x07,AUG=0x08,SEP=0x09,OCT=0x10,NOV=0x11,DEC=0x12
+extern unsigned char YEAR;    //= 0x00;//0x00-0x99
+extern unsigned char RAM;
+extern unsigned char MIN_Alarm;
+extern unsigned char HOUR_Alarm;
+extern unsigned char WEEK_DAY_Alarm;
+extern unsigned char Timer_Counter_0;
+extern unsigned char Timer_Counter_1;
+extern unsigned char Extension_Register;
+extern unsigned char Flag_Register;
+extern unsigned char Control_Register;
+extern unsigned char TEMP;
+extern float         TEMP_RESULT;
+extern unsigned char Backup_Function;
+extern unsigned char DUMMY;
+extern unsigned char OLD_SEC; //= 0;
+extern unsigned char OLD_Timer_Counter_0; //= 0;
+extern String MONTH_S; //= "Jan.Feb.Mar.Apr.May.Jun.Jly.Aug.Sep.dmy.dmy.dmy.dmy.dmy.dmy.Oct.Nov.Dec.";
+extern String WEEK_S;  //= "Sun.Mon.Tue.Wed.Thu.Fri.Sat.";
+extern unsigned char RX_DATA;
+extern unsigned long RX_RESULT;
+extern unsigned char RX_FLAG;
+extern unsigned char DATA_OK_FLAG;
+extern unsigned char BAD_DATA_FLAG;
+extern unsigned char ALARM_BUFFER;
+extern unsigned char str_data[8];
+extern unsigned long WEEK_ALARM_BUFFER;
+extern unsigned int TIMER_VALUE;
+enum SYORI_FLAG {
   TOKEI,
   TOKEI_COUNT,
   ALARM_SET,
@@ -106,8 +109,10 @@ enum SYORI_FLAG
   TIMER_STOP,
   TIMER_HALT,
   TIMER_OVER
-} SYORI_FLAG;
+};
+extern enum SYORI_FLAG SYORI_FLAG;
 //*******************************************************
+
 // prototype
 byte ByteRead(byte reg);
 void ByteWrite(byte reg, byte data);
@@ -146,3 +151,4 @@ void TX_COUNTER(void);
 void ByteWrite(byte reg, byte data);
 byte ByteRead(byte reg);
 
+#endif	// arduino-RX8900
