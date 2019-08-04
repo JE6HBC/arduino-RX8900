@@ -1,3 +1,10 @@
+
+#include <arduino-RX8900.h>
+
+
+
+
+
 //USE +5V PWR
 //AE-RX8900 SCL  =  A5
 //AE-RX8900 SDA  =  A4
@@ -23,7 +30,6 @@
  */
 
 #include "Wire.h"
-#include "arduino-RX8900.h"
 
 void setup()
 {
