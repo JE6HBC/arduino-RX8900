@@ -1,3 +1,6 @@
+
+#include <arduino-RX8900.h>
+
 //USE +5V PWR
 //AE-RX8900 SCL  =  A5
 //AE-RX8900 SDA  =  A4
@@ -23,7 +26,6 @@
  */
 
 #include "Wire.h"
-#include "arduino-RX8900.h"
 
 void setup()
 {
@@ -38,7 +40,7 @@ void setup()
   Serial.println();
   INIT_RX8900A(); 
   INPUT_DATE();            
-  SYORI_FLAG = TOKEI;
+ // SYORI_FLAG = TOKEI;
   SET_DATE();
   COUNT_START();
 }
