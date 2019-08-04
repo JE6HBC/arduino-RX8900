@@ -1,0 +1,20 @@
+{
+    "name": "arduino-RX8900",
+    "description": "Arduino library for EPSON's RTC RX8900",
+    "keywords": "Time, date, hour, minute, second, day, week, month, year, RTC, EPSON, RX8900",
+    "authors": [
+	{
+	    "name": "Yuki KOYAMA",
+	    "email": "je6hbc@d-io.com"
+	}
+    ]
+    "repository": {
+	"type": "git",
+	"url": "https://github.com/JE6HBC/arduino-RX8900"
+    },
+    "version": "0.1",
+    "frameworks": "Arduino",
+    "examples": {
+	"examples/*/*.ino"
+    }
+}
