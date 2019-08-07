@@ -1,9 +1,8 @@
-
 #include <arduino-RX8900.h>
 
 //USE +5V PWR
-//AE-RX8900 SCL  =  A5
-//AE-RX8900 SDA  =  A4
+//AE-RX8900 SCL  =  A5 for Uno (3 for Leonardo)
+//AE-RX8900 SDA  =  A4 for Uno (2 for Leonardo)
 //AE-RX8900 FOE  = +5V
 //AE-RX8900 VBAT = +5V
 
