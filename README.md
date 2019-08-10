@@ -6,5 +6,6 @@ Download & Zip this repository.
 Load with arduino IDE.
 
 # copyright
-Based on source from Akizuki Denshi, JAPAN.
-Modified by Yuki KOYAMA.
+All right reserved by Yuki Koyama.
+
+Based source contribution from Akizuki Denshi, JAPAN.
