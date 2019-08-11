@@ -1,7 +1,5 @@
 /*
 arduino-RX8900.cpp 
-Copyright (c)
-Based on source code by Akizuki Denshi Tsusho
 */
 
 
