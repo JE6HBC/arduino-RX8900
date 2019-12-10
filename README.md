@@ -8,4 +8,4 @@ Load with arduino IDE.
 # copyright
 All right reserved by Yuki Koyama.
 
-Based source contribution from Akizuki Denshi, JAPAN.
+Based on sample code by Akizuki Denshi, JAPAN.
