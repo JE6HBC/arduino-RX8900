@@ -5,7 +5,3 @@ Arduino library for EPSON's RTC RX8900.
 Download & Zip this repository.
 Load with arduino IDE.
 
-# copyright
-All right reserved by Yuki Koyama.
-
-Based on sample code by Akizuki Denshi, JAPAN.
